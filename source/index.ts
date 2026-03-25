@@ -8,7 +8,7 @@ function parseaParams(argv): ContactsControllerOptions {
   const resultado = minimist(argv);
   return {
     action: resultado["action"],
-    params: JSON.parse(resultado["params"] || "{}")
+    params: resultado["params"] ? JSON.parse(resultado["params"]) : {},
   };
 }
 
